@@ -1,0 +1,16 @@
+<% if @venues.any?() %>
+<% @venues.each() do |venue| %>
+  <ul>
+      <li><a href='/venue/<%=venue.id()%>'> <%=venue.venue_name()%></a></li>
+  </ul>
+    <%end%>
+<%else %>
+  <p> You need some venues! </p>
+<%end%>
+
+
+<form action='/venue/save/' method='post'>
+  <label for='new_venue'> Please enter the name of your new venue: </label>
+  <input id='new_venue' name='new_venue' type='text' </input>
+  <button type='submit' class='btn btn-success'> Save Venue</button>
+</form>

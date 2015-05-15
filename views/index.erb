@@ -1,1 +1,14 @@
-<h1> Bands and Venues </h1> 
+<h1> Bands and Venues </h1>
+
+<% if @bands.any?() %>
+<% @band.each() do |band| %>
+  <ul>
+      <li><a href='/band/<%=band.id()%>'> <%=band.band_name()%></a></li>
+  </ul>
+    <%end%>
+<%else %>
+  <p> You need some bands! </p>
+<%end%>
+
+
+<a href='venues/'> Add Venues </a> 
