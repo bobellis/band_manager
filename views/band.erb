@@ -1,6 +1,7 @@
 <h1> <%=@band.band_name()%> </h1>
 
 <% if @venues.any?() %>
+<h3> <%=@band.band_name()%> has played at the following venues:</h3>
 <% @venues.each() do |venue| %>
   <ul>
       <li><%=venue.venue_name()%></li>
@@ -24,11 +25,16 @@
         </label>
       </div>
       <% end %>
+      <button type="submit" class = "btn btn-success">Add venues</button>
 <%else%>
     <p> There are no venues! </p>
 <% end %>
 
-<button type="submit" class = "btn btn-success">Add venues</button>
+</form>
+<br>
+<form action='/band/<%=@band.id%>' method='post'>
+  <input name='_method' type='hidden' value='delete'>
+  <button type='submit' class="btn btn-danger">Delete Band</button>
 </form>
 
-<a href='/'> Go Home! </a> 
+<a href='/'> Go Home! </a>
