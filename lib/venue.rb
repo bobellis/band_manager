@@ -4,9 +4,8 @@ class Venue < ActiveRecord::Base
   before_save(:capitalize_first_letter)
   has_and_belongs_to_many :bands
 
-  private
-      define_method(:capitalize_first_letter) do
-        self.band_name=(band_name().downcase().capitalize)
-      end
-
+private
+    define_method(:capitalize_first_letter) do
+      self.venue_name=(venue_name().downcase().capitalize)
+    end
 end

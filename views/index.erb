@@ -1,7 +1,7 @@
 <h1> Bands and Venues </h1>
 
 <% if @bands.any?() %>
-<% @band.each() do |band| %>
+<% @bands.each() do |band| %>
   <ul>
       <li><a href='/band/<%=band.id()%>'> <%=band.band_name()%></a></li>
   </ul>
@@ -10,5 +10,11 @@
   <p> You need some bands! </p>
 <%end%>
 
+<form action='/' method='post'>
+  <label for='new_band'> Please enter the name of your new band: </label>
+  <input id='new_band' name='new_band' type='text' </input>
+  <button type='submit' class='btn btn-success'> Save Band</button>
+</form>
 
-<a href='venues/'> Add Venues </a> 
+
+<a href='venues/'> Add Venues </a>

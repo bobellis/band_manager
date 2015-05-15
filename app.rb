@@ -19,3 +19,14 @@ post('/venue/save/') do
   @venues = Venue.all()
   erb(:venues)
 end
+
+post('/') do
+  Band.create({:band_name => params.fetch('new_band')})
+  @bands = Band.all()
+  erb(:index)
+end
+
+get('/band/:id') do
+  @band = Band.find(params.fetch('id').to_i())
+  erb(:band)
+end
