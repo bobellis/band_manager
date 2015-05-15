@@ -1,7 +1,7 @@
 development:
     adapter: postgresql
-    database: band_venue_development
+    database: bandvenue_development
 
 test:
     adapter: postgresql
-    database: band_venue_test
+    database: bandvenue_test
