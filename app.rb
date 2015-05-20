@@ -64,5 +64,13 @@ delete('/venue/:id') do
   @venue.destroy
   @venues = Venue.all()
   erb(:venues)
+end
 
+patch('/band_name_change/:id') do
+  @new_band_name = params.fetch('new_band_name')
+  @band = Band.find(params.fetch'id')
+  @band.update(:band_name => @new_band_name)
+  @venues = @band.venues()
+  @all_venues = Venue.all() - @venues
+  erb(:band)
 end

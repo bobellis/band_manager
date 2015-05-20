@@ -1,4 +1,9 @@
 <h1> <%=@band.band_name()%> </h1>
+<form action='/band_name_change/<%=@band.id()%>' method='post'>
+<input type="hidden" name="_method" value="patch">
+<input id='new_band_name' name='new_band_name' type='text' </input>
+<button type='submit' class="btn btn-warning">Change Band Name</button>
+</form>
 
 <% if @venues.any?() %>
 <h3> <%=@band.band_name()%> has played at the following venues:</h3>
